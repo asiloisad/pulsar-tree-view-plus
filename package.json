@@ -1,11 +1,11 @@
 {
-  "name": "tree-view-plus",
+  "name": "tree-panel",
   "version": "0.229.1",
   "main": "./lib/main",
   "description": "Enhanced tree view for exploring and opening project files. Features configurable click behavior, natural sorting, base name grouping, debounced file watching, and lightweight dependencies.",
-  "repository": "https://github.com/asiloisad/pulsar-tree-view-plus",
+  "repository": "https://github.com/asiloisad/pulsar-tree-panel",
   "bugs": {
-    "url": "https://github.com/asiloisad/pulsar-tree-view-plus/issues"
+    "url": "https://github.com/asiloisad/pulsar-tree-panel/issues"
   },
   "license": "MIT",
   "engines": {

@@ -1,4 +1,4 @@
-# tree-view-plus
+# tree-panel
 
 Enhanced tree view for exploring and opening project files.
 
@@ -14,7 +14,7 @@ Enhanced tree view for exploring and opening project files.
 
 ## Installation
 
-To install `tree-view-plus` search for [tree-view-plus](https://web.pulsar-edit.dev/packages/tree-view-plus) in the Install pane of the Pulsar settings or run `ppm install tree-view-plus`. Alternatively, you can run `ppm install asiloisad/pulsar-tree-view-plus` to install a package directly from the GitHub repository.
+To install `tree-panel` search for [tree-panel](https://web.pulsar-edit.dev/packages/tree-panel) in the Install pane of the Pulsar settings or run `ppm install tree-panel`. Alternatively, you can run `ppm install asiloisad/pulsar-tree-panel` to install a package directly from the GitHub repository.
 
 ## Contributing
 
