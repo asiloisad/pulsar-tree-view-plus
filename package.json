@@ -16,9 +16,6 @@
     "minimatch": "^10.1.2",
     "natural-compare-lite": "^1.4.0"
   },
-  "devDependencies": {
-    "temp": "~0.9.0"
-  },
   "deserializers": {
     "TreeView": "getTreeViewInstance"
   },
