@@ -1,5 +1,5 @@
 
-const _ = require('underscore-plus');
+
 const fs = require('fs-plus');
 const path = require('path');
 const temp = require('temp').track();
@@ -63,7 +63,7 @@ describe("FileStats", function() {
         stats
       } = treeView.roots[0].directory.entries.get("file1.txt");
       const stamp = stats.mtime;
-      expect(_.isDate(stamp)).toBe(false);
+      expect(stamp instanceof Date).toBe(false);
       expect(typeof stamp).toBe("number");
       expect(Number.isNaN(stamp)).toBe(false);
     });

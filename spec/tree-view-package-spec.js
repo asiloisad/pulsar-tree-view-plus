@@ -1,5 +1,5 @@
 
-let _ = require('underscore-plus');
+
 const { File } = require('atom');
 const fs = require('fs-plus');
 const path = require('path');
@@ -1099,7 +1099,7 @@ describe("TreeView", function () {
         expect(treeView.element.scrollTop).toBe(0);
 
         const entryCount = treeView.element.querySelectorAll(".entry").length;
-        _.times(entryCount, () => atom.commands.dispatch(treeView.element, 'core:move-down'));
+        for (let i = 0; i < entryCount; i++) atom.commands.dispatch(treeView.element, 'core:move-down');
 
         atom.commands.dispatch(treeView.element, 'core:move-to-top');
         expect(treeView.element.scrollTop).toBe(0);
@@ -1107,7 +1107,7 @@ describe("TreeView", function () {
 
       it("selects the root entry", function () {
         const entryCount = treeView.element.querySelectorAll(".entry").length;
-        _.times(entryCount, () => atom.commands.dispatch(treeView.element, 'core:move-down'));
+        for (let i = 0; i < entryCount; i++) atom.commands.dispatch(treeView.element, 'core:move-down');
 
         expect(treeView.roots[0]).not.toHaveClass('selected');
         atom.commands.dispatch(treeView.element, 'core:move-to-top');
@@ -1189,10 +1189,10 @@ describe("TreeView", function () {
         const entryCount = treeView.element.querySelectorAll(".entry").length;
         const entryHeight = treeView.element.querySelector('.file').offsetHeight;
 
-        _.times(entryCount, () => atom.commands.dispatch(treeView.element, 'core:move-down'));
+        for (let i = 0; i < entryCount; i++) atom.commands.dispatch(treeView.element, 'core:move-down');
         expect(treeView.element.scrollTop + treeView.element.offsetHeight).toBeGreaterThan((entryCount * entryHeight) - 1);
 
-        _.times(entryCount, () => atom.commands.dispatch(treeView.element, 'core:move-up'));
+        for (let i = 0; i < entryCount; i++) atom.commands.dispatch(treeView.element, 'core:move-up');
         expect(treeView.element.scrollTop).toBe(0);
       });
     });
@@ -1485,7 +1485,7 @@ describe("TreeView", function () {
         down: ['vertical', 'after']
       };
 
-      return _.each(splitOptions, function (options, direction) {
+      return Object.entries(splitOptions).forEach(function ([direction, options]) {
         const command = `tree-view:open-selected-entry-${direction}`;
 
         describe(command, function () {
