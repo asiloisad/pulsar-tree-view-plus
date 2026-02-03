@@ -380,8 +380,8 @@ describe("TreeView", function () {
     });
 
     describe("if the current file has a path", function () {
-      describe("if the tree-view.focusOnReveal config option is true", () => it("shows and focuses the tree view and selects the file", function () {
-        atom.config.set("tree-view.focusOnReveal", true);
+      describe("if the tree-view-plus.focusOnReveal config option is true", () => it("shows and focuses the tree view and selects the file", function () {
+        atom.config.set("tree-view-plus.focusOnReveal", true);
 
         waitsForPromise(() => atom.workspace.open(path.join(path1, 'dir1', 'file1')));
 
@@ -405,8 +405,8 @@ describe("TreeView", function () {
         });
       }));
 
-      describe("if the tree-view.focusOnReveal config option is false", () => it("shows the tree view and selects the file, but does not change the focus", function () {
-        atom.config.set("tree-view.focusOnReveal", false);
+      describe("if the tree-view-plus.focusOnReveal config option is false", () => it("shows the tree view and selects the file, but does not change the focus", function () {
+        atom.config.set("tree-view-plus.focusOnReveal", false);
 
         waitsForPromise(() => atom.workspace.open(path.join(path1, 'dir1', 'file1')));
 
@@ -885,10 +885,10 @@ describe("TreeView", function () {
       });
     });
 
-    describe("when the tree-view.autoReveal config setting is true", function () {
+    describe("when the tree-view-plus.autoReveal config setting is true", function () {
       beforeEach(function () {
         jasmine.attachToDOM(atom.workspace.getElement());
-        return atom.config.set("tree-view.autoReveal", true);
+        return atom.config.set("tree-view-plus.autoReveal", true);
       });
 
       it("selects the active item's entry in the tree view, expanding parent directories if needed", function () {
@@ -3672,7 +3672,7 @@ describe("TreeView", function () {
         fs.writeFileSync(ignoredFile, 'ignored text');
 
         atom.project.setPaths([projectPath]);
-        atom.config.set("tree-view.hideVcsIgnoredFiles", false);
+        atom.config.set("tree-view-plus.hideVcsIgnoredFiles", false);
       });
 
       afterEach(() => {
@@ -3684,23 +3684,23 @@ describe("TreeView", function () {
       it("hides git-ignored files if the option is set, but otherwise shows them", function () {
         expect(Array.from(treeView.element.querySelectorAll('.file')).map(f => f.textContent)).toEqual(['.gitignore', 'ignored.txt']);
 
-        atom.config.set("tree-view.hideVcsIgnoredFiles", true);
+        atom.config.set("tree-view-plus.hideVcsIgnoredFiles", true);
         expect(Array.from(treeView.element.querySelectorAll('.file')).map(f => f.textContent)).toEqual(['.gitignore']);
 
-        atom.config.set("tree-view.hideVcsIgnoredFiles", false);
+        atom.config.set("tree-view-plus.hideVcsIgnoredFiles", false);
         expect(Array.from(treeView.element.querySelectorAll('.file')).map(f => f.textContent)).toEqual(['.gitignore', 'ignored.txt']);
       });
 
       it("works in conjunction with the hideIgnoredNames config option", function () {
         // https://github.com/atom/tree-view/issues/489
 
-        atom.config.set('tree-view.hideVcsIgnoredFiles', true);
-        atom.config.set('tree-view.hideIgnoredNames', false);
+        atom.config.set('tree-view-plus.hideVcsIgnoredFiles', true);
+        atom.config.set('tree-view-plus.hideIgnoredNames', false);
         atom.config.set('core.ignoredNames', ['.gitignore']);
 
         expect(Array.from(treeView.element.querySelectorAll('.file')).map(f => f.textContent)).toEqual(['.gitignore']);
 
-        atom.config.set('tree-view.hideIgnoredNames', true);
+        atom.config.set('tree-view-plus.hideIgnoredNames', true);
         expect(Array.from(treeView.element.querySelectorAll('.file')).map(f => f.textContent)).toEqual([]);
       });
     });
@@ -3714,7 +3714,7 @@ describe("TreeView", function () {
         fs.writeFileSync(ignoreFile, 'tree-view.js');
 
         atom.project.setPaths([projectPath]);
-        return atom.config.set("tree-view.hideVcsIgnoredFiles", true);
+        return atom.config.set("tree-view-plus.hideVcsIgnoredFiles", true);
       });
 
       it("does not hide git ignored files", () => expect(Array.from(treeView.element.querySelectorAll('.file')).map(f => f.textContent)).toEqual(['.gitignore', 'tree-view.js', 'tree-view.txt']));
@@ -3730,14 +3730,14 @@ describe("TreeView", function () {
     fs.writeFileSync(path.join(projectPath, 'test.js'), '');
     fs.writeFileSync(path.join(projectPath, 'test.txt'), '');
     atom.project.setPaths([projectPath]);
-    atom.config.set("tree-view.hideIgnoredNames", false);
+    atom.config.set("tree-view-plus.hideIgnoredNames", false);
 
     expect(Array.from(treeView.roots[0].querySelectorAll('.entry')).map(e => e.textContent)).toEqual(['.git', 'test.js', 'test.txt']);
 
     // Add a unique class to the names even when showing them
     expect(Array.from(treeView.roots[0].querySelectorAll('.status-ignored-name')).map(e => e.textContent)).toEqual(['test.js']);
 
-    atom.config.set("tree-view.hideIgnoredNames", true);
+    atom.config.set("tree-view-plus.hideIgnoredNames", true);
     expect(Array.from(treeView.roots[0].querySelectorAll('.entry')).map(e => e.textContent)).toEqual(['test.txt']);
 
     atom.config.set("core.ignoredNames", []);
@@ -3799,10 +3799,10 @@ describe("TreeView", function () {
       return atom.project.setPaths([rootDirPath]);
     });
 
-    it("defaults to disabled", () => expect(atom.config.get("tree-view.squashDirectoryNames")).toBeFalsy());
+    it("defaults to disabled", () => expect(atom.config.get("tree-view-plus.squashDirectoryNames")).toBeFalsy());
 
     describe("when enabled", function () {
-      beforeEach(() => atom.config.set('tree-view.squashDirectoryNames', true));
+      beforeEach(() => atom.config.set('tree-view-plus.squashDirectoryNames', true));
 
       it("does not squash root directories", function () {
         const rootDir = fs.absolute(temp.mkdirSync('tree-view'));
@@ -4366,10 +4366,10 @@ describe("TreeView", function () {
     });
 
 
-    it("defaults to set", () => expect(atom.config.get("tree-view.sortFoldersBeforeFiles")).toBeTruthy());
+    it("defaults to set", () => expect(atom.config.get("tree-view-plus.sortFoldersBeforeFiles")).toBeTruthy());
 
     it("lists folders first if the option is set", function () {
-      atom.config.set("tree-view.sortFoldersBeforeFiles", true);
+      atom.config.set("tree-view-plus.sortFoldersBeforeFiles", true);
 
       const topLevelEntries = [].slice.call(treeView.roots[0].entries.children).map(element => element.innerText);
 
@@ -4389,7 +4389,7 @@ describe("TreeView", function () {
     });
 
     it("sorts folders as files if the option is not set", function () {
-      atom.config.set("tree-view.sortFoldersBeforeFiles", false);
+      atom.config.set("tree-view-plus.sortFoldersBeforeFiles", false);
 
       const topLevelEntries = [].slice.call(treeView.roots[0].entries.children).map(element => element.innerText);
 
@@ -5507,12 +5507,12 @@ describe("TreeView", function () {
 
   describe("the alwaysOpenExisting config option", function () {
     it("defaults to unset", () => {
-      expect(atom.config.get("tree-view.alwaysOpenExisting")).toBeFalsy()
+      expect(atom.config.get("tree-view-plus.alwaysOpenExisting")).toBeFalsy()
     });
 
     describe("when a file is single-clicked", function () {
       beforeEach(function () {
-        atom.config.set("tree-view.alwaysOpenExisting", true);
+        atom.config.set("tree-view-plus.alwaysOpenExisting", true);
         return jasmine.attachToDOM(workspaceElement);
       });
 
@@ -5565,7 +5565,7 @@ describe("TreeView", function () {
       it("should have opened both panes", () => expect(atom.workspace.getCenter().getPanes().length).toBe(2));
 
       describe("tree-view:open-selected-entry", function () {
-        beforeEach(() => atom.config.set("tree-view.alwaysOpenExisting", true));
+        beforeEach(() => atom.config.set("tree-view-plus.alwaysOpenExisting", true));
         describe("when the first pane is focused, a file is opened that is already open in the second pane", function () {
           beforeEach(function () {
             const firstPane = atom.workspace.getCenter().getPanes()[0];
@@ -5584,7 +5584,7 @@ describe("TreeView", function () {
       });
 
       describe("tree-view:open-selected-entry (alwaysOpenExisting off)", function () {
-        beforeEach(() => atom.config.set("tree-view.alwaysOpenExisting", false));
+        beforeEach(() => atom.config.set("tree-view-plus.alwaysOpenExisting", false));
 
 
         describe("when the first pane is focused, a file is opened that is already open in the second pane", function () {
@@ -5605,7 +5605,7 @@ describe("TreeView", function () {
       });
 
       describe("when a file that is already open in other pane is single-clicked", function () {
-        beforeEach(() => atom.config.set("tree-view.alwaysOpenExisting", true));
+        beforeEach(() => atom.config.set("tree-view-plus.alwaysOpenExisting", true));
 
         describe("when core.allowPendingPaneItems is set to true (default)", function () {
           let activePaneItem;
@@ -5634,7 +5634,7 @@ describe("TreeView", function () {
       });
 
       describe("when a file is double-clicked", function () {
-        beforeEach(() => atom.config.set("tree-view.alwaysOpenExisting", true));
+        beforeEach(() => atom.config.set("tree-view-plus.alwaysOpenExisting", true));
         let activePaneItem = null;
 
         beforeEach(function () {
@@ -6043,14 +6043,14 @@ describe('Icon class handling', () => {
 describe('Hidden on startup', function () {
   describe('When not configured', () => {
     it('defaults to false', () => {
-      expect(atom.config.get("tree-view.hiddenOnStartup")).toBeFalsy();
+      expect(atom.config.get("tree-view-plus.hiddenOnStartup")).toBeFalsy();
     });
   });
 
   describe('When set to true', function () {
     it('hides the tree view pane on startup', async () => {
       await atom.packages.deactivatePackage('tree-view');
-      atom.config.set("tree-view.hiddenOnStartup", true);
+      atom.config.set("tree-view-plus.hiddenOnStartup", true);
       await atom.packages.activatePackage('tree-view');
       await atom.workspace.open();
       expect(atom.workspace.getLeftDock().isVisible()).toBe(false);
@@ -6059,7 +6059,7 @@ describe('Hidden on startup', function () {
   describe('When set to false', () => {
     it('allows the pane to show up as normal', async () => {
       await atom.packages.deactivatePackage('tree-view');
-      atom.config.set("tree-view.hiddenOnStartup", false);
+      atom.config.set("tree-view-plus.hiddenOnStartup", false);
       await waitForPackageActivation();
       expect(atom.workspace.getLeftDock().isVisible()).toBe(true);
     });
