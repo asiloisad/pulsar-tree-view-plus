@@ -1,5 +1,5 @@
 
-const fs = require('fs-plus');
+const fs = require('../lib/fs-compat');
 const path = require('path');
 const temp = require('temp').track();
 

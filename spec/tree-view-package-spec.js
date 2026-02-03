@@ -1,7 +1,7 @@
 
 
 const { File } = require('atom');
-const fs = require('fs-plus');
+const fs = require('../lib/fs-compat');
 const path = require('path');
 const temp = require('temp').track();
 const os = require('os');
@@ -5455,7 +5455,7 @@ describe("TreeView", function () {
           spyOn(fs, 'renameSync').andCallThrough();
           treeView.onDragStart(dragStartEvent);
           treeView.onDrop(dropEvent);
-          expect(fs.renameSync.calls.length).toBe(4); // new/ is handled internally by fs-plus
+          expect(fs.renameSync.calls.length).toBe(4); // new/ is handled internally by moveSync
           expect(fs.existsSync(newAFilePath)).toBe(false);
           expect(fs.readFileSync(oldAFilePath, 'utf8')).toBe('new');
           expect(fs.existsSync(newBFilePath)).toBe(false);
