@@ -122,20 +122,14 @@
       "default": false,
       "description": "When Pulsar is opened, the view is hidden."
     },
-    "isPermanent": {
-      "order": 12,
-      "type": "boolean",
-      "default": false,
-      "description": "When enabled, the tree view becomes a permanent dock item that cannot be closed."
-    },
     "fileDoubleClick": {
-      "order": 13,
+      "order": 12,
       "type": "boolean",
       "default": false,
       "description": "Require double click to open files. When enabled, single click only selects the entry."
     },
     "dirDoubleClick": {
-      "order": 14,
+      "order": 13,
       "type": "boolean",
       "default": false,
       "description": "Require double click to expand/collapse folders. When enabled, single click only selects the entry. The arrow icon always responds to a single click."
