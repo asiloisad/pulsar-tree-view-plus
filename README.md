@@ -12,6 +12,7 @@ Enhanced tree view for exploring and opening project files.
 - **Debounced file watching**: Rapid file creation/deletion no longer causes excessive reloads. File system events are batched with a 100ms debounce.
 - **Permanent dock item option**: Configurable `isPermanent` setting to prevent the tree view from being closed.
 - **Bug fixes**: Fixed expansion state serialization, drag-and-drop URI handling, copy dialog crash, move entry error handling, continuous selection, and split pane `ItemRegistry` error.
+- **Project list integration**: When the [project-list](https://github.com/asiloisad/pulsar-project-list) package is installed, the empty project view shows a "List projects" button and routes "Reopen a project" through the recent projects list.
 - **Lightweight dependencies**: Removed `underscore-plus` and `fs-plus` in favor of native Node.js APIs.
 
 ## Installation
