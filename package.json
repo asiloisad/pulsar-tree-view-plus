@@ -1,6 +1,6 @@
 {
   "name": "tree-view-plus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "./lib/main",
   "description": "Enhanced tree view for exploring and opening project files. Features configurable click behavior, natural sorting, base name grouping, debounced file watching, and lightweight dependencies.",
   "repository": "https://github.com/asiloisad/pulsar-tree-view-plus",
@@ -55,8 +55,14 @@
       "type": "string",
       "default": "default",
       "enum": [
-        {"value": "default", "description": "Default (locale-aware, numeric)"},
-        {"value": "natural", "description": "Natural sort (alphabetical and numbers)"}
+        {
+          "value": "default",
+          "description": "Default (locale-aware, numeric)"
+        },
+        {
+          "value": "natural",
+          "description": "Natural sort (alphabetical and numbers)"
+        }
       ],
       "description": "Method used to sort files and directories in the tree view."
     },
