@@ -14,13 +14,13 @@ Enhanced tree view for exploring and opening project files.
 - **Bug fixes**: Fixed expansion state serialization, drag-and-drop URI handling, copy dialog crash, move entry error handling, continuous selection, and split pane `ItemRegistry` error.
 - **Project list integration**: When the [project-list](https://github.com/asiloisad/pulsar-project-list) package is installed, the empty project view shows a "List projects" button and routes "Reopen a project" through the recent projects list.
 - **Lightweight dependencies**: Removed `underscore-plus` and `fs-plus` in favor of native Node.js APIs.
-- **Special roots service**: Provides a `roots` service that lets external packages inject virtual root sections into the tree view. Used by [tree-view-favourite](https://web.pulsar-edit.dev/packages/tree-view-favourite) to add a favourites section.
+- **Special roots service**: Provides a `tree-view-roots` service that lets external packages inject virtual root sections into the tree view. Used by [tree-view-favourite](https://web.pulsar-edit.dev/packages/tree-view-favourite) to add a favourites section.
 
 ## Services
 
-### `roots` (provided)
+### `tree-view-roots` (provided)
 
-External packages can consume the `roots` service to add virtual root sections above the project folders.
+External packages can consume the `tree-view-roots` service to add virtual root sections above the project folders.
 
 ```javascript
 // In your package's consumeRoots method:
