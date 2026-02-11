@@ -14,7 +14,7 @@ Enhanced tree view for exploring and opening project files.
 - **Bug fixes**: Fixed expansion state serialization, drag-and-drop URI handling, copy dialog crash, move entry error handling, continuous selection, and split pane `ItemRegistry` error.
 - **Project list integration**: When the [project-list](https://github.com/asiloisad/pulsar-project-list) package is installed, the empty project view shows a "List projects" button and routes "Reopen a project" through the recent projects list.
 - **Lightweight dependencies**: Removed `underscore-plus` and `fs-plus` in favor of native Node.js APIs.
-- **Special roots service**: Provides a `tree-view-roots` service that lets external packages inject virtual root sections into the tree view. Used by [tree-view-favourite](https://web.pulsar-edit.dev/packages/tree-view-favourite) to add a favourites section.
+- **Special roots service**: Provides a `tree-view-roots` service that lets external packages inject virtual root sections into the tree view. Used by [tree-view-favourites](https://web.pulsar-edit.dev/packages/tree-view-favourites) to add favourite sections.
 
 ## Services
 
@@ -28,14 +28,16 @@ consumeRoots(api) {
   this.handle = api.registerRoot({
     name: 'My Section',        // Section header text
     iconClass: 'icon-star',    // Icon class for the header
-    className: 'my-section',   // CSS class for the section
+    className: 'my-section',   // CSS class for the section container
     entryClassName: 'my-entry', // CSS class for each entry
-    getEntries: () => [...]    // Function returning an array of file paths
+    getEntries: () => [...],   // Function returning an array of file paths
+    onDrop: (paths) => {...},  // Called when entries are dropped onto this section
   })
 }
 ```
 
 The returned handle provides:
+- `handle.element` — the section's DOM element (or `null` if not attached)
 - `handle.update()` — re-reads entries and re-renders
 - `handle.toggle()` — toggle section visibility
 - `handle.dispose()` — remove the section
