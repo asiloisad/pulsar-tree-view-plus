@@ -138,4 +138,17 @@
       margin-top: 1px;
     }
   }
+
+  .special-root-section {
+    padding-left: @component-icon-padding;
+    padding-right: @component-padding;
+    padding-bottom: 4px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid @base-border-color;
+
+    .status-removed .name {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+  }
 }

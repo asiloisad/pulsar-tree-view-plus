@@ -123,3 +123,4 @@
   '.platform-linux atom-text-editor:not([mini])': [
     {'label': 'Show in File Manager', 'command': 'tree-view:show-current-file-in-file-manager'}
   ]
+

@@ -47,6 +47,12 @@
       "versions": {
         "1.0.0": "provideTreeView"
       }
+    },
+    "roots": {
+      "description": "Register virtual root sections in the tree view",
+      "versions": {
+        "1.0.0": "provideRoots"
+      }
     }
   },
   "configSchema": {
