@@ -52,11 +52,11 @@ consumeRoots(api) {
 ```
 
 The returned handle provides:
-- `handle.element` — the section's DOM element (or `null` if not attached)
-- `handle.update()` — re-reads entries and re-renders
-- `handle.toggle()` — toggle section visibility
-- `handle.dispose()` — remove the section
+- `handle.element`: the section's DOM element (or `null` if not attached)
+- `handle.update()`: re-reads entries and re-renders
+- `handle.toggle()`: toggle section visibility
+- `handle.dispose()`: remove the section
 
 ## Contributing
 
-Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub — any feedback's welcome!
+Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub. Any feedback is welcome!
