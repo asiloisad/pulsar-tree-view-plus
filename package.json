@@ -38,6 +38,11 @@
       "versions": {
         "1.0.0": "consumeProjectList"
       }
+    },
+    "recent-list": {
+      "versions": {
+        "1.0.0": "consumeRecentList"
+      }
     }
   },
   "providedServices": {
