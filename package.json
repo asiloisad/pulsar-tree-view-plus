@@ -52,6 +52,12 @@
         "1.0.0": "provideTreeView"
       }
     },
+    "tree-view-plus": {
+      "description": "Extended tree view API with reveal and navigation support",
+      "versions": {
+        "1.0.0": "provideTreeViewPlus"
+      }
+    },
     "tree-view-roots": {
       "description": "Register virtual root sections in the tree view",
       "versions": {

@@ -29,6 +29,63 @@ When the [project-list](https://github.com/asiloisad/pulsar-project-list) packag
 
 When the [recent-list](https://github.com/asiloisad/pulsar-recent-list) package is installed, the "Reopen a project" button in the empty project view opens the recent projects list instead of the built-in Pulsar dialog.
 
+## Provided Service `tree-view`
+
+Compatibility service matching the API of the built-in tree-view package.
+
+In your `package.json`:
+
+```json
+{
+  "consumedServices": {
+    "tree-view": {
+      "versions": { "1.0.0": "consumeTreeView" }
+    }
+  }
+}
+```
+
+In your main module:
+
+```javascript
+consumeTreeView(service) {
+  this.treeViewService = service;
+  return new Disposable(() => { this.treeViewService = null; });
+}
+```
+
+The service provides:
+- `selectedPaths()`: returns an array of currently selected file/directory paths.
+- `entryForPath(filePath)`: returns the DOM entry element for the given path, or `null` if not found.
+
+## Provided Service `tree-view-plus`
+
+Extended tree view API. Use this instead of `tree-view` when you need functionality beyond what the built-in package provides.
+
+In your `package.json`:
+
+```json
+{
+  "consumedServices": {
+    "tree-view-plus": {
+      "versions": { "1.0.0": "consumeTreeViewPlus" }
+    }
+  }
+}
+```
+
+In your main module:
+
+```javascript
+consumeTreeViewPlus(service) {
+  this.treeViewService = service;
+  return new Disposable(() => { this.treeViewService = null; });
+}
+```
+
+The service provides everything from `tree-view`, plus:
+- `revealPath(filePath, options)`: expands parent directories and selects the entry for `filePath`, scrolling it into view. Accepts `{ show, focus }` options to control tree view visibility and focus.
+
 ## Provided Service `tree-view-roots`
 
 Allows external packages to inject virtual root sections into the tree view above the project folders. Used by [tree-view-favourites](https://web.pulsar-edit.dev/packages/tree-view-favourites) to add favourite sections.
