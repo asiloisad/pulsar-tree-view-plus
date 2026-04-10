@@ -1,6 +1,6 @@
 {
   "name": "tree-view-plus",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "main": "./lib/main",
   "description": "Enhanced tree view for exploring and opening project files",
   "repository": "https://github.com/asiloisad/pulsar-tree-view-plus",
