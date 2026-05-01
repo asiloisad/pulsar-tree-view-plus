@@ -91,6 +91,10 @@
     {'label': 'Paste', 'command': 'tree-view:paste'}
   ]
 
+  '.tree-view .multi-select.all-roots-selected': [
+    {'label': 'Remove Project Folders', 'command': 'tree-view:remove-project-folder'}
+  ]
+
   'atom-pane[data-active-item-path] .item-views': [
     {'label': 'Reveal in Tree View', 'command': 'tree-view:reveal-active-file'}
   ]
