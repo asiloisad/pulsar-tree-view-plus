@@ -55,6 +55,7 @@ consumeTreeView(service) {
 ```
 
 The service provides:
+
 - `selectedPaths()`: returns an array of currently selected file/directory paths.
 - `entryForPath(filePath)`: returns the DOM entry element for the given path, or `null` if not found.
 
@@ -84,6 +85,7 @@ consumeTreeViewPlus(service) {
 ```
 
 The service provides everything from `tree-view`, plus:
+
 - `revealPath(filePath, options)`: expands parent directories and selects the entry for `filePath`, scrolling it into view. Accepts `{ show, focus }` options to control tree view visibility and focus.
 
 ## Provided Service `tree-view-roots`
@@ -118,6 +120,7 @@ consumeRoots(api) {
 ```
 
 The returned handle provides:
+
 - `handle.element`: the section's DOM element (or `null` if not attached)
 - `handle.update()`: re-reads entries and re-renders
 - `handle.toggle()`: toggle section visibility
