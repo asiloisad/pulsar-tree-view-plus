@@ -85,13 +85,13 @@
     "sortFoldersBeforeFiles": {
       "order": 2,
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "When listing directory items, list subdirectories before listing files."
     },
     "sortByBase": {
       "order": 3,
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "Sort by filename base and extension independently. Files with the same base name are grouped together."
     },
     "showOnRightSide": {
