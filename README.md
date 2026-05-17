@@ -21,6 +21,20 @@ Enhanced tree view for exploring and opening project files.
 
 To install `tree-view-plus` search for [tree-view-plus](https://web.pulsar-edit.dev/packages/tree-view-plus) in the Install pane of the Pulsar settings or run `ppm install tree-view-plus`. Alternatively, you can run `ppm install asiloisad/pulsar-tree-view-plus` to install a package directly from the GitHub repository.
 
+## Keybindings
+
+- `tree-view:toggle`: <kbd>Cmd/Ctrl+\</kbd> or <kbd>Cmd/Ctrl+K Cmd/Ctrl+B</kbd> toggle the tree view,
+- `tree-view:reveal-active-file`: <kbd>Cmd/Ctrl+|</kbd> reveal the active file,
+- `tree-view:toggle-focus`: <kbd>Ctrl+0</kbd> or <kbd>Alt+\</kbd> toggle tree view focus,
+- `tree-view:copy`: <kbd>Cmd/Ctrl+C</kbd> copy selected entries,
+- `tree-view:cut`: <kbd>Cmd/Ctrl+X</kbd> cut selected entries,
+- `tree-view:paste`: <kbd>Cmd/Ctrl+V</kbd> paste entries,
+- `tree-view:open-selected-entry-right`: <kbd>Cmd/Ctrl+K Right</kbd> or <kbd>Cmd/Ctrl+K L</kbd>,
+- `tree-view:open-selected-entry-left`: <kbd>Cmd/Ctrl+K Left</kbd> or <kbd>Cmd/Ctrl+K H</kbd>,
+- `tree-view:open-selected-entry-up`: <kbd>Cmd/Ctrl+K Up</kbd> or <kbd>Cmd/Ctrl+K K</kbd>,
+- `tree-view:open-selected-entry-down`: <kbd>Cmd/Ctrl+K Down</kbd> or <kbd>Cmd/Ctrl+K J</kbd>,
+- `tree-view:open-selected-entry-in-pane-1..9`: <kbd>Cmd/Ctrl+1..9</kbd>.
+
 ## Consumed Service `project-list`
 
 When the [project-list](https://github.com/asiloisad/pulsar-project-list) package is installed, the empty project view (shown when no folders are open) gains a "List projects" button that toggles the project list.
