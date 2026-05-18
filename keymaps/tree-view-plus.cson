@@ -1,9 +1,6 @@
 'atom-workspace':
-  'cmdorctrl-\\': 'tree-view:toggle'
-  'cmdorctrl-k cmdorctrl-b': 'tree-view:toggle'
-  'cmdorctrl-|': 'tree-view:reveal-active-file'
-  'ctrl-0': 'tree-view:toggle-focus'
-  'alt-\\': 'tree-view:toggle-focus'
+  'alt-t': 'tree-view:toggle-focus'
+  'cmdorctrl-shift-\\': 'tree-view:reveal-active-file'
 
 '.tree-view':
   'ctrl-f': 'tree-view:expand-item'

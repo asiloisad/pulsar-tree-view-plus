@@ -23,9 +23,9 @@ To install `tree-view-plus` search for [tree-view-plus](https://web.pulsar-edit.
 
 ## Keybindings
 
-- `tree-view:toggle`: <kbd>Cmd/Ctrl+\</kbd> or <kbd>Cmd/Ctrl+K Cmd/Ctrl+B</kbd> toggle the tree view,
-- `tree-view:reveal-active-file`: <kbd>Cmd/Ctrl+|</kbd> reveal the active file,
-- `tree-view:toggle-focus`: <kbd>Ctrl+0</kbd> or <kbd>Alt+\</kbd> toggle tree view focus,
+- `tree-view:toggle`: toggle the tree view,
+- `tree-view:reveal-active-file`: <kbd>Cmd/Ctrl+Shift+\</kbd> reveal the active file,
+- `tree-view:toggle-focus`: <kbd>Alt+T</kbd> open and focus tree view, or return focus to editor if already focused,
 - `tree-view:copy`: <kbd>Cmd/Ctrl+C</kbd> copy selected entries,
 - `tree-view:cut`: <kbd>Cmd/Ctrl+X</kbd> cut selected entries,
 - `tree-view:paste`: <kbd>Cmd/Ctrl+V</kbd> paste entries,
