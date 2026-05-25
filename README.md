@@ -15,25 +15,25 @@ Enhanced tree view for exploring and opening project files.
 - **Project list integration**: When the [project-list](https://github.com/asiloisad/pulsar-project-list) package is installed, the empty project view shows a "List projects" button.
 - **Recent list integration**: When the [recent-list](https://github.com/asiloisad/pulsar-recent-list) package is installed, the "Reopen a project" button opens the recent projects list instead of the built-in dialog.
 - **Lightweight dependencies**: Removed `underscore-plus` and `fs-plus` in favor of native Node.js APIs.
-- **Special roots service**: Provides a `tree-view-roots` service that lets external packages inject virtual root sections into the tree view. Used by [tree-view-favourites](https://web.pulsar-edit.dev/packages/tree-view-favourites) to add favourite sections.
+- **Special roots service**: Provides a `tree-view-roots` service that lets external packages inject virtual root sections into the tree view. Used by [tree-view-favourites](https://github.com/asiloisad/pulsar-tree-view-favourites) to add favourite sections.
 
 ## Installation
 
 To install `tree-view-plus` search for [tree-view-plus](https://web.pulsar-edit.dev/packages/tree-view-plus) in the Install pane of the Pulsar settings or run `ppm install tree-view-plus`. Alternatively, you can run `ppm install asiloisad/pulsar-tree-view-plus` to install a package directly from the GitHub repository.
 
-## Keybindings
+## Commands
 
 - `tree-view:toggle`: toggle the tree view,
-- `tree-view:reveal-active-file`: <kbd>Cmd/Ctrl+Shift+\</kbd> reveal the active file,
-- `tree-view:toggle-focus`: <kbd>Alt+T</kbd> open and focus tree view, or return focus to editor if already focused,
-- `tree-view:copy`: <kbd>Cmd/Ctrl+C</kbd> copy selected entries,
-- `tree-view:cut`: <kbd>Cmd/Ctrl+X</kbd> cut selected entries,
-- `tree-view:paste`: <kbd>Cmd/Ctrl+V</kbd> paste entries,
-- `tree-view:open-selected-entry-right`: <kbd>Cmd/Ctrl+K Right</kbd> or <kbd>Cmd/Ctrl+K L</kbd>,
-- `tree-view:open-selected-entry-left`: <kbd>Cmd/Ctrl+K Left</kbd> or <kbd>Cmd/Ctrl+K H</kbd>,
-- `tree-view:open-selected-entry-up`: <kbd>Cmd/Ctrl+K Up</kbd> or <kbd>Cmd/Ctrl+K K</kbd>,
-- `tree-view:open-selected-entry-down`: <kbd>Cmd/Ctrl+K Down</kbd> or <kbd>Cmd/Ctrl+K J</kbd>,
-- `tree-view:open-selected-entry-in-pane-1..9`: <kbd>Cmd/Ctrl+1..9</kbd>.
+- `tree-view:reveal-active-file`: reveal the active file,
+- `tree-view:toggle-focus`: open and focus tree view, or return focus to editor if already focused,
+- `tree-view:copy`: copy selected entries,
+- `tree-view:cut`: cut selected entries,
+- `tree-view:paste`: paste entries,
+- `tree-view:open-selected-entry-right`,
+- `tree-view:open-selected-entry-left`,
+- `tree-view:open-selected-entry-up`,
+- `tree-view:open-selected-entry-down`,
+- `tree-view:open-selected-entry-in-pane-1..9`.
 
 ## Consumed Service `project-list`
 
@@ -104,7 +104,7 @@ The service provides everything from `tree-view`, plus:
 
 ## Provided Service `tree-view-roots`
 
-Allows external packages to inject virtual root sections into the tree view above the project folders. Used by [tree-view-favourites](https://web.pulsar-edit.dev/packages/tree-view-favourites) to add favourite sections.
+Allows external packages to inject virtual root sections into the tree view above the project folders. Used by [tree-view-favourites](https://github.com/asiloisad/pulsar-tree-view-favourites) to add favourite sections.
 
 In your `package.json`:
 
