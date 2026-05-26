@@ -94,64 +94,92 @@
       "default": true,
       "description": "Sort by filename base and extension independently. Files with the same base name are grouped together."
     },
-    "showOnRightSide": {
+    "duplicateCopyNameStyle": {
       "order": 4,
+      "type": "string",
+      "default": "system",
+      "enum": [
+        {
+          "value": "system",
+          "description": "System default (Windows, macOS, or Linux style)"
+        },
+        {
+          "value": "legacy",
+          "description": "Legacy tree-view-plus style: file0.txt, file1.txt"
+        },
+        {
+          "value": "windows",
+          "description": "Windows style: file - Copy.txt, file - Copy (2).txt"
+        },
+        {
+          "value": "macos",
+          "description": "macOS style: file copy.txt, file copy 2.txt"
+        },
+        {
+          "value": "linux",
+          "description": "Linux/GNOME style: file (copy).txt, file (another copy).txt"
+        }
+      ],
+      "description": "Naming style used when copy-pasting an entry where an item with the same name already exists."
+    },
+    "showOnRightSide": {
+      "order": 5,
       "type": "boolean",
       "default": false,
       "description": "Show the tree view on the right side of the workspace."
     },
     "squashDirectoryNames": {
-      "order": 5,
+      "order": 6,
       "type": "boolean",
       "default": false,
       "title": "Collapse directories",
       "description": "Collapse directories that only contain a single directory."
     },
     "hideVcsIgnoredFiles": {
-      "order": 6,
+      "order": 7,
       "type": "boolean",
       "default": false,
       "title": "Hide VCS Ignored Files",
       "description": "Don't show files and directories ignored by the current project's VCS system. For example, projects using Git have these paths defined in their `.gitignore` file."
     },
     "hideIgnoredNames": {
-      "order": 7,
+      "order": 8,
       "type": "boolean",
       "default": false,
       "description": "Don't show items matched by the `Ignored Names` core config setting."
     },
     "autoReveal": {
-      "order": 8,
+      "order": 9,
       "type": "boolean",
       "default": false,
       "description": "Reveal tree view entries when they become the active pane item."
     },
     "focusOnReveal": {
-      "order": 9,
+      "order": 10,
       "type": "boolean",
       "default": true,
       "description": "Focus the tree view when revealing entries."
     },
     "alwaysOpenExisting": {
-      "order": 10,
+      "order": 11,
       "type": "boolean",
       "default": false,
       "description": "When opening a file, always focus an already-existing view of the file even if it's in another pane."
     },
     "hiddenOnStartup": {
-      "order": 11,
+      "order": 12,
       "type": "boolean",
       "default": false,
       "description": "When Pulsar is opened, the view is hidden."
     },
     "fileDoubleClick": {
-      "order": 12,
+      "order": 13,
       "type": "boolean",
       "default": false,
       "description": "Require double click to open files. When enabled, single click only selects the entry."
     },
     "dirDoubleClick": {
-      "order": 13,
+      "order": 14,
       "type": "boolean",
       "default": false,
       "description": "Require double click to expand/collapse folders. When enabled, single click only selects the entry. The arrow icon always responds to a single click."

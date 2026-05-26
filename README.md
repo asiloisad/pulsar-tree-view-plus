@@ -9,6 +9,7 @@ Enhanced tree view for exploring and opening project files.
 - **Alt+click open externally**: Alt+click on a file opens it in an external program via the `open-external` service.
 - **Natural sorting**: Treats multi-digit numbers atomically (e.g., `file2` before `file10`). Choose between natural sort and locale-aware collation.
 - **Base name grouping**: Sort by filename base and extension independently, so files with the same base name are grouped together.
+- **Configurable duplicate copy names**: Choose system-default, legacy, Windows, macOS, or Linux/GNOME naming when pasted copies collide.
 - **Debounced file watching**: Rapid file creation/deletion no longer causes excessive reloads. File system events are batched with a 100ms debounce.
 - **Survives workspace restoration**: The tree view is closeable via the X button, but protected from accidental destruction during project switching.
 - **Bug fixes**: Fixed expansion state serialization, drag-and-drop URI handling, copy dialog crash, move entry error handling, continuous selection, and split pane `ItemRegistry` error.
